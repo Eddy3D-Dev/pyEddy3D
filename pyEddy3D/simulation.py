@@ -1,26 +1,14 @@
-#!/usr/bin/env python
-
+import logging
 import os
 import re
-from enum import Enum
 from pathlib import Path
 from typing import List, Tuple, Optional
 
-from colorama import init
 from termcolor import colored
 
-# Initialize colorama
-init(autoreset=True)
+from pyEddy3D.status import Status
 
-
-class Status(Enum):
-    COMPLETED = 0
-    CRASHED = 1
-    NOT_STARTED = 2
-    CONVERGED = 3
-    IN_PROGRESS = 4
-    NOT_CHECKED = 5
-    MESH_CRASHED = 6
+logger = logging.getLogger(__name__)
 
 
 class Simulation:
@@ -170,7 +158,7 @@ class Simulation:
                                         if val.replace(".", "", 1).isdigit():
                                             end_times.append(val)
                     except Exception as e:
-                        print(f"Error reading {p}: {e}")
+                        logger.error(f"Error reading {p}: {e}")
 
         return control_dicts, end_times
 
@@ -251,5 +239,4 @@ class Simulation:
                             self.sim_status = Status.COMPLETED
                             break
             except Exception as e:
-                print(f"Error reading logfile {logfile}: {e}")
-
+                logger.error(f"Error reading logfile {logfile}: {e}")

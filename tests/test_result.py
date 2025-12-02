@@ -1,6 +1,6 @@
 import pathlib
 import unittest
-from pyEddy3D import SimCompleted
+from pyEddy3D.simulation import Simulation
 
 
 class TestSimCompleted(unittest.TestCase):
@@ -15,7 +15,7 @@ class TestSimCompleted(unittest.TestCase):
         path = base_path / p
         return path
 
-    def printout(self, s: SimCompleted.Simulation) -> None:
+    def printout(self, s: Simulation) -> None:
         print(f"Mesh Crashed {s.n_mesh_crashed}")
         print(f"Crashed {s.n_crashed}")
         print(f"Completed {s.n_completed}")
@@ -27,7 +27,7 @@ class TestSimCompleted(unittest.TestCase):
         folder = "12_Case_Type_Slab_NS_Height_30_Dist_20_dir_0_crashed"
         path = self.fix_cwd(folder)
 
-        s = SimCompleted.Simulation(path)
+        s = Simulation(path)
         s.analyze()
 
         self.printout(s)
@@ -43,7 +43,7 @@ class TestSimCompleted(unittest.TestCase):
         folder = "Case_36_crashed"
         path = self.fix_cwd(folder)
 
-        s = SimCompleted.Simulation(path)
+        s = Simulation(path)
         s.analyze()
 
         self.printout(s)
@@ -59,7 +59,7 @@ class TestSimCompleted(unittest.TestCase):
         folder = "Case_17_m_crashed"
         path = self.fix_cwd(folder)
 
-        s = SimCompleted.Simulation(path)
+        s = Simulation(path)
         s.analyze()
 
         self.printout(s)
@@ -75,7 +75,7 @@ class TestSimCompleted(unittest.TestCase):
         folder = "6_Case_Type_Scatter_Height_20_Dist_20_dir_30_completed"
         path = self.fix_cwd(folder)
 
-        s = SimCompleted.Simulation(path)
+        s = Simulation(path)
         s.analyze()
 
         self.printout(s)
@@ -91,7 +91,7 @@ class TestSimCompleted(unittest.TestCase):
         folder = "6_Case_Type_Scatter_Height_20_Dist_20_dir_40_inprogress"
         path = self.fix_cwd(folder)
 
-        s = SimCompleted.Simulation(path)
+        s = Simulation(path)
         s.analyze()
 
         self.printout(s)
@@ -107,7 +107,7 @@ class TestSimCompleted(unittest.TestCase):
         folder = "6_Case_Type_Scatter_Height_20_Dist_20_dir_40_converged"
         path = self.fix_cwd(folder)
 
-        s = SimCompleted.Simulation(path)
+        s = Simulation(path)
         s.analyze()
 
         self.printout(s)
@@ -123,7 +123,7 @@ class TestSimCompleted(unittest.TestCase):
         folder = "6_Case_Type_Scatter_Height_20_Dist_20_dir_40_notstarted"
         path = self.fix_cwd(folder)
 
-        s = SimCompleted.Simulation(path)
+        s = Simulation(path)
         s.analyze()
 
         self.printout(s)
@@ -138,7 +138,7 @@ class TestSimCompleted(unittest.TestCase):
     def test_all(self) -> None:
         # This test assumes it's running from the root of the repo where 'tests' folder is visible
         # or from inside 'tests' folder.
-        # However, SimCompleted default init uses Path.cwd().
+        # However, Simulation default init uses Path.cwd().
         # If we run from root, cwd is root.
         # If we run from tests, cwd is tests.
         # We need to make sure we point to the tests directory if we want to scan it.
@@ -149,7 +149,7 @@ class TestSimCompleted(unittest.TestCase):
         else:
             target_dir = cwd
 
-        s = SimCompleted.Simulation(target_dir)
+        s = Simulation(target_dir)
         s.analyze()
 
         self.printout(s)
@@ -168,7 +168,7 @@ class TestSimCompleted(unittest.TestCase):
         else:
             target_dir = cwd
             
-        s = SimCompleted.Simulation(target_dir)
+        s = Simulation(target_dir)
         s.analyze()
 
         self.printout(s)
@@ -181,7 +181,7 @@ class TestSimCompleted(unittest.TestCase):
         else:
             target_dir = cwd
             
-        s = SimCompleted.Simulation(target_dir)
+        s = Simulation(target_dir)
         s.analyze()
 
         self.printout(s)
@@ -194,7 +194,7 @@ class TestSimCompleted(unittest.TestCase):
         else:
             target_dir = cwd
             
-        s = SimCompleted.Simulation(target_dir)
+        s = Simulation(target_dir)
         s.analyze()
 
         self.printout(s)
@@ -207,7 +207,7 @@ class TestSimCompleted(unittest.TestCase):
         else:
             target_dir = cwd
             
-        s = SimCompleted.Simulation(target_dir)
+        s = Simulation(target_dir)
         s.analyze()
 
         self.printout(s)
@@ -222,7 +222,7 @@ class TestSimCompleted(unittest.TestCase):
         else:
             target_dir = cwd
             
-        s = SimCompleted.Simulation(target_dir)
+        s = Simulation(target_dir)
         s.analyze()
 
         self.printout(s)

@@ -21,7 +21,7 @@ dependencies = [
 ]
 
 [project.scripts]
-pyeddy3d = "pyeddy3d.main:main"
+pyeddy3d = "pyEddy3D.cli:main"
 
 [project.urls]
 Source = "https://github.com/kastnerp/pyEddy3D"
