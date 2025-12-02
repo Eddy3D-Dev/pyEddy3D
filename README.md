@@ -39,11 +39,3 @@ uv run pyeddy3d /path/to/simulations
 ```bash
 uv run pytest
 ```
-
-## Related repositories
-
-https://github.com/kastnerp/Eddy3D-Helperfunctions  
-https://github.com/kastnerp/Eddy3D-Issues  
-https://github.com/kastnerp/Eddy3D-SimCompleted  
-https://github.com/kastnerp/Eddy3D-Residuals  
-https://github.com/kastnerp/Eddy3D-CaseStudies  
