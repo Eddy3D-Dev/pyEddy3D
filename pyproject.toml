@@ -1,0 +1,42 @@
+[project]
+name = "pyeddy3d"
+version = "0.2.0"
+description = "Checks if Eddy3D simulations have completed."
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    { name = "Patrick Kastner", email = "patrick.kastner@gmail.com" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Software Development :: Build Tools",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "numpy",
+    "termcolor",
+    "colorama",
+]
+
+[project.scripts]
+pyeddy3d = "pyeddy3d.main:main"
+
+[project.urls]
+Source = "https://github.com/kastnerp/pyEddy3D"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["pyEddy3D"]
+
+[dependency-groups]
+dev = [
+    "check-manifest",
+    "coverage",
+    "pytest",
+    "ruff",
+]
