@@ -1,6 +1,6 @@
 [project]
 name = "pyeddy3d"
-version = "0.2.0"
+version = "1.0.0"
 description = "Checks if Eddy3D simulations have completed."
 readme = "README.md"
 requires-python = ">=3.8"
