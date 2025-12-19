@@ -1,4 +1,5 @@
-[![Python application](https://github.com/kastnerp/Eddy3D-SimCompleted/actions/workflows/python-app.yml/badge.svg)](https://github.com/kastnerp/Eddy3D-SimCompleted/actions/workflows/python-app.yml)
+[![Tests](https://github.com/kastnerp/Eddy3D-SimCompleted/actions/workflows/python-app.yml/badge.svg)](https://github.com/kastnerp/Eddy3D-SimCompleted/actions/workflows/python-app.yml)
+[![GitHub release](https://img.shields.io/github/v/release/Eddy3D-Dev/pyEddy3D)](https://github.com/Eddy3D-Dev/pyEddy3D/releases)
 
 # pyEddy3D
 
